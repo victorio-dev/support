@@ -7,6 +7,8 @@ marked `@internal`.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-20
+
 ### Breaking
 
 - Minimum PHP raised from 8.2 to 8.3, matching the version baseline in
@@ -19,16 +21,7 @@ marked `@internal`.
 - Composer scripts `test`, `analyse`, `format`, `format-check`.
 - PHPStan level 8 (`phpstan.neon`, no baseline), Pint config, Pest + Orchestra Testbench setup.
 
-### Changed
-
-- nothing yet
-
-### Fixed
-
-- nothing yet
-
 ## [0.1.0] - 2026-10-19
-## [0.2.0] - 2026-10-20
 
 ### Added
 
