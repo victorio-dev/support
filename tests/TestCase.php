@@ -27,9 +27,10 @@ abstract class TestCase extends Orchestra
     protected function defineEnvironment($app): void
     {
         // DB_CONNECTION=mysql|pgsql (`make test DB=...`, CI) keeps Testbench's own connection of
-        // that name, whose config file reads DB_HOST, DB_DATABASE and friends. Without it the
-        // default stays sqlite, and the suite runs on an in-memory database.
-        if ($app['config']->get('database.default') !== 'sqlite') {
+        // that name, whose config file reads DB_HOST, DB_DATABASE and friends. Without it
+        // Testbench defaults to its `testing` sqlite connection (foreign keys off), which is
+        // replaced below by an in-memory one with foreign keys on.
+        if (! in_array($app['config']->get('database.default'), ['sqlite', 'testing'], true)) {
             return;
         }
 
@@ -38,6 +39,8 @@ abstract class TestCase extends Orchestra
             'driver' => 'sqlite',
             'database' => ':memory:',
             'prefix' => '',
+            // Enforced like on mysql/pgsql, so cascading deletes behave the same on every driver.
+            'foreign_key_constraints' => true,
         ]);
     }
 }
