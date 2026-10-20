@@ -1,0 +1,12 @@
+/vendor/
+vendor
+*/vendor/
+composer.lock
+.phpunit.cache/
+.phpunit.result.cache
+/build/
+.phpstan.cache/
+.env
+.idea/
+.vscode/
+EOF

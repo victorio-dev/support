@@ -1,15 +1,51 @@
 {
     "name": "victorio/support",
     "description": "Shared helpers for Victorio packages.",
+    "keywords": [
+        "laravel",
+        "victorio"
+    ],
+    "homepage": "https://github.com/victorio-dev/support",
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Victorio",
+            "role": "Developer"
+        }
+    ],
     "require": {
-        "php": "^8.2"
+        "php": "^8.3",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0"
     },
     "autoload": {
         "psr-4": {
             "Victorio\\Support\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "autoload-dev": {
+        "psr-4": {
+            "Victorio\\Support\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint",
+        "format-check": "vendor/bin/pint --test"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
