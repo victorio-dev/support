@@ -12,6 +12,11 @@ marked `@internal`.
 - The test suite runs on sqlite (default, in memory), mysql or pgsql, selected by
   `DB_CONNECTION` and the usual `DB_*` variables; every test uses `RefreshDatabase`.
 
+### Fixed
+
+- The test suite did not start under `zend.assertions=-1` (production php.ini, CI): a tracked
+  `phpunit.xml.dist` replaces the config Pest generated inside an `assert()` call.
+
 ## [0.2.0] - 2026-10-20
 
 ### Breaking
