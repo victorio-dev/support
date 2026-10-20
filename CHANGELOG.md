@@ -28,6 +28,7 @@ marked `@internal`.
 - nothing yet
 
 ## [0.1.0] - 2026-10-19
+## [0.2.0] - 2026-10-20
 
 ### Added
 
