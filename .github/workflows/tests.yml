@@ -146,8 +146,13 @@ jobs:
       - name: Tests (F1)
         run: composer test
 
+      # The lowest jobs test the lower bounds of the runtime dependencies. PHPStan and Pint are
+      # dev tools that never reach the buyer's project, and their oldest versions are not worth
+      # supporting, so F2 and F3 run only on the stable jobs.
       - name: Static analysis (F2)
+        if: matrix.dependency-version != 'lowest'
         run: composer analyse
 
       - name: Formatting (F3)
+        if: matrix.dependency-version != 'lowest'
         run: composer format-check
