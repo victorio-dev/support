@@ -26,6 +26,13 @@ abstract class TestCase extends Orchestra
      */
     protected function defineEnvironment($app): void
     {
+        // DB_CONNECTION=mysql|pgsql (`make test DB=...`, CI) keeps Testbench's own connection of
+        // that name, whose config file reads DB_HOST, DB_DATABASE and friends. Without it the
+        // default stays sqlite, and the suite runs on an in-memory database.
+        if ($app['config']->get('database.default') !== 'sqlite') {
+            return;
+        }
+
         $app['config']->set('database.default', 'testing');
         $app['config']->set('database.connections.testing', [
             'driver' => 'sqlite',

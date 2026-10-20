@@ -7,6 +7,11 @@ marked `@internal`.
 
 ## [Unreleased]
 
+### Added
+
+- The test suite runs on sqlite (default, in memory), mysql or pgsql, selected by
+  `DB_CONNECTION` and the usual `DB_*` variables; every test uses `RefreshDatabase`.
+
 ## [0.2.0] - 2026-10-20
 
 ### Breaking
