@@ -66,4 +66,4 @@ expect(PseudoLocale::untranslated($html, allowed: ['Quote 42', 'Acme Ltd']))->to
 ## License
 
 MIT — see the repository. Please report vulnerabilities privately, as described in
-[SECURITY.md](SECURITY.md).
+[SECURITY.md](https://github.com/victorio-dev/support/blob/main/SECURITY.md).
