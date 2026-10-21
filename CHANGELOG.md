@@ -7,6 +7,8 @@ marked `@internal`.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-21
+
 ### Added
 
 - `Database\ModelKey`: model and raw keys as strings, for string morph and tenant id columns.
