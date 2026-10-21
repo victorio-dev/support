@@ -9,6 +9,13 @@ marked `@internal`.
 
 ### Added
 
+- `Database\ModelKey`: model and raw keys as strings, for string morph and tenant id columns.
+- `Database\StringKeyedMorphMany`: a `MorphMany` that binds the parent key as a string (int, ULID
+  and UUID parents in one column, PostgreSQL included), with string eager loading.
+- `Testing\PseudoLocale` and `Testing\PseudoTranslator`, for tests: mark every translation and
+  list the hard-coded text left on a rendered page.
+- Requires `illuminate/database`, `illuminate/translation` (`^12.0|^13.0`) and `ext-dom`.
+
 - The test suite runs on sqlite (default, in memory), mysql or pgsql, selected by
   `DB_CONNECTION` and the usual `DB_*` variables; every test uses `RefreshDatabase`.
 

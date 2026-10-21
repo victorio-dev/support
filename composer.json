@@ -1,6 +1,6 @@
 {
     "name": "victorio/support",
-    "description": "Shared helpers for Victorio packages.",
+    "description": "Shared helpers for Victorio packages: string-keyed morph relations, model keys, and test helpers.",
     "keywords": [
         "laravel",
         "victorio"
@@ -16,7 +16,10 @@
     ],
     "require": {
         "php": "^8.3",
-        "illuminate/support": "^12.0|^13.0"
+        "ext-dom": "*",
+        "illuminate/database": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "illuminate/translation": "^12.0|^13.0"
     },
     "require-dev": {
         "larastan/larastan": "^3.0",
